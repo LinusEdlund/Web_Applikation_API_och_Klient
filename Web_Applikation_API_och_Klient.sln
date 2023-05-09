@@ -5,6 +5,8 @@ VisualStudioVersion = 17.5.33627.172
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataManagerLibrary", "DataManagerLibrary\DataManagerLibrary.csproj", "{318511D4-6AC2-421B-BC01-4B402FBEDFFE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "API", "API\API.csproj", "{DB8C4C5C-6B36-4CA1-BE52-DB065C1607DB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{318511D4-6AC2-421B-BC01-4B402FBEDFFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{318511D4-6AC2-421B-BC01-4B402FBEDFFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{318511D4-6AC2-421B-BC01-4B402FBEDFFE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DB8C4C5C-6B36-4CA1-BE52-DB065C1607DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DB8C4C5C-6B36-4CA1-BE52-DB065C1607DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DB8C4C5C-6B36-4CA1-BE52-DB065C1607DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DB8C4C5C-6B36-4CA1-BE52-DB065C1607DB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

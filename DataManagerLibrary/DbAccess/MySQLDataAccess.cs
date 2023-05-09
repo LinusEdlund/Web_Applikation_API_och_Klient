@@ -15,14 +15,14 @@ public class MySQLDataAccess : IDataAccess
 
     public async Task<IEnumerable<T>> LoadDataAsync<T, U>(string storedProcedure, U parameters, string connectionId = "Default")
     {
-        using IDbConnection connection = new MySqlConnection(_config.GetConnectionString(connectionId));
+        using IDbConnection connection = new MySqlConnection(_config[connectionId]);
 
         return await connection.QueryAsync<T>(storedProcedure, parameters, commandType: CommandType.StoredProcedure);
     }
 
     public async Task SaveDataAsync<T>(string storedProcedure, T parameters, string connectionId = "Default")
     {
-        using IDbConnection connection = new MySqlConnection(_config.GetConnectionString(connectionId));
+        using IDbConnection connection = new MySqlConnection(_config[connectionId]);
 
         await connection.ExecuteAsync(storedProcedure, parameters, commandType: CommandType.StoredProcedure);
     }
