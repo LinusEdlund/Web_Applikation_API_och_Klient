@@ -24,7 +24,7 @@ public class NobelPrizeData : INobelPrizeData
     public Task Insert(NobelPrizeModel nobel) =>
         _db.SaveDataAsync<dynamic>(
             "nobel.spNobel_Insert",
-            new { nobel.Year, nobel.Name, nobel.Citation, nobel.Country, nobel.Institution, nobel.Gender, nobel.Age });
+            new { nobel.Name, nobel.Year });
 
     public Task DeleteById(int id) =>
         _db.SaveDataAsync("nobel.spNobel_Delete", new { p_Id = id });
