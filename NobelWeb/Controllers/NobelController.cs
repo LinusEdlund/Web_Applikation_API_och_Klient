@@ -17,4 +17,19 @@ public class NobelController : Controller
         var nobelList = await _nobelData.GetAll();
         return View(nobelList.ToList());
     }
+
+    public IActionResult Create()
+    {
+        return View();
+    }
+    [HttpPost]
+    public IActionResult Create(NobelPrizeModel person)
+    {
+        if (ModelState.IsValid)
+        {
+            _nobelData.Insert(person);
+            return RedirectToAction("Index");
+        }
+        return View();
+    }
 }
