@@ -80,7 +80,7 @@ public class NobelPrizeController : ControllerBase
 	{
 		try
 		{
-			await _data.DeleteById(id);
+			await _data.Delete(id);
 			return Ok();
 		}
 		catch (Exception ex)

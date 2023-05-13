@@ -23,11 +23,11 @@ public class NobelController : Controller
         return View();
     }
     [HttpPost]
-    public IActionResult Create(NobelPrizeModel person)
+    public async Task<IActionResult> Create(NobelPrizeModel person)
     {
         if (ModelState.IsValid)
         {
-            _nobelData.Create(person);
+            await _nobelData.Create(person);
             return RedirectToAction("Index");
         }
         return View();
@@ -45,14 +45,31 @@ public class NobelController : Controller
     }
 
     [HttpPost]
-    public IActionResult Edit(NobelPrizeModel person)
+    public async Task<IActionResult> Edit(NobelPrizeModel person)
     {
         if (ModelState.IsValid)
         {
-            _nobelData.Update(person);
+            await _nobelData.Update(person);
             return RedirectToAction("Index");
         }
         return View();
+    }
+
+    public async Task<IActionResult> Delete(int id)
+    {
+        var nobelPrize = await _nobelData.GetById(id);
+        if (nobelPrize is null)
+        {
+            return NotFound();
+        }
+        return View(nobelPrize);
+    }
+
+    [HttpPost, ActionName("Delete")]
+    public async Task<IActionResult> DeletePost(int id)
+    {
+        await _nobelData.Delete(id);
+        return RedirectToAction("Index");
     }
 
     
