@@ -16,7 +16,7 @@ public class NobelPrizeData : INobelPrizeData
 
     public async Task<NobelPrizeModel?> GetById(int id) 
     {
-        var nobelPrizes = await _db.LoadDataAsync<NobelPrizeModel, dynamic>("nobel.spNobel_GetById", new { Id = id });
+        var nobelPrizes = await _db.LoadDataAsync<NobelPrizeModel, dynamic>("nobel.spNobel_GetById", new { p_Id = id });
 
         return nobelPrizes.FirstOrDefault();
     }
@@ -27,7 +27,7 @@ public class NobelPrizeData : INobelPrizeData
             new { nobel.Year, nobel.Name, nobel.Citation, nobel.Country, nobel.Institution, nobel.Gender, nobel.Age });
 
     public Task DeleteById(int id) =>
-        _db.SaveDataAsync("nobel.spNobel_Delete", new { Id = id });
+        _db.SaveDataAsync("nobel.spNobel_Delete", new { p_Id = id });
 
     public Task Update(NobelPrizeModel nobel) =>
         _db.SaveDataAsync("nobel.spNobel_Update", nobel);

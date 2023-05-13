@@ -3,9 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.33627.172
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataManagerLibrary", "DataManagerLibrary\DataManagerLibrary.csproj", "{318511D4-6AC2-421B-BC01-4B402FBEDFFE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataManagerLibrary", "DataManagerLibrary\DataManagerLibrary.csproj", "{318511D4-6AC2-421B-BC01-4B402FBEDFFE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "API", "API\API.csproj", "{DB8C4C5C-6B36-4CA1-BE52-DB065C1607DB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "API", "API\API.csproj", "{DB8C4C5C-6B36-4CA1-BE52-DB065C1607DB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "asp.net", "asp.net", "{358AFC03-E413-40C3-8F41-D9178BD1A1AE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NobelWeb", "NobelWeb\NobelWeb.csproj", "{FAAB7028-303D-423F-A54E-D17396343FEE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,9 +25,18 @@ Global
 		{DB8C4C5C-6B36-4CA1-BE52-DB065C1607DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DB8C4C5C-6B36-4CA1-BE52-DB065C1607DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DB8C4C5C-6B36-4CA1-BE52-DB065C1607DB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FAAB7028-303D-423F-A54E-D17396343FEE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FAAB7028-303D-423F-A54E-D17396343FEE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FAAB7028-303D-423F-A54E-D17396343FEE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FAAB7028-303D-423F-A54E-D17396343FEE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{318511D4-6AC2-421B-BC01-4B402FBEDFFE} = {358AFC03-E413-40C3-8F41-D9178BD1A1AE}
+		{DB8C4C5C-6B36-4CA1-BE52-DB065C1607DB} = {358AFC03-E413-40C3-8F41-D9178BD1A1AE}
+		{FAAB7028-303D-423F-A54E-D17396343FEE} = {358AFC03-E413-40C3-8F41-D9178BD1A1AE}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7C87E952-6FB9-40D6-B40B-567F1EF1DC2A}

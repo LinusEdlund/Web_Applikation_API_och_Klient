@@ -20,7 +20,7 @@ public class NobelPrizeController : ControllerBase
     {
 		try
 		{
-			return Ok(await _data.GetAll());
+            return Ok(await _data.GetAll());
 		}
 		catch (Exception ex)
 		{
