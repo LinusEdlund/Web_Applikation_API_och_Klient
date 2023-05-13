@@ -52,7 +52,7 @@ public class NobelPrizeController : ControllerBase
 	{
 		try
 		{
-			await _data.Insert(model);
+			await _data.Create(model);
 			return Ok();
 		}
 		catch (Exception ex)

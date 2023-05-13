@@ -27,9 +27,33 @@ public class NobelController : Controller
     {
         if (ModelState.IsValid)
         {
-            _nobelData.Insert(person);
+            _nobelData.Create(person);
             return RedirectToAction("Index");
         }
         return View();
     }
+
+    public async Task<IActionResult> Edit(int id)
+    {
+        NobelPrizeModel? nobelPrize = await _nobelData.GetById(id);
+        if (nobelPrize is null)
+        {
+            return NotFound();
+        }
+
+        return View(nobelPrize);
+    }
+
+    [HttpPost]
+    public IActionResult Edit(NobelPrizeModel person)
+    {
+        if (ModelState.IsValid)
+        {
+            _nobelData.Update(person);
+            return RedirectToAction("Index");
+        }
+        return View();
+    }
+
+    
 }

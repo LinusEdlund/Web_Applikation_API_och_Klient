@@ -21,13 +21,13 @@ public class NobelPrizeData : INobelPrizeData
         return nobelPrizes.FirstOrDefault();
     }
 
-    public Task Insert(NobelPrizeModel nobel) =>
+    public Task Create(NobelPrizeModel nobel) =>
         _db.SaveDataAsync<dynamic>("nobel.spNobel_Insert", new { nobel.Name, nobel.Year });
 
     public Task DeleteById(int id) =>
         _db.SaveDataAsync("nobel.spNobel_Delete", new { p_Id = id });
 
     public Task Update(NobelPrizeModel nobel) =>
-        _db.SaveDataAsync("nobel.spNobel_Update", nobel);
+        _db.SaveDataAsync("nobel.spNobel_Update", new { p_Id = nobel.Id, nobel.Name, nobel.Year });
         
 }

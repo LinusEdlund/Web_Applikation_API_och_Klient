@@ -6,6 +6,6 @@ public class NobelPrizeModel
 {
     public int Id { get; set; }
     public string Name { get; set; }
-    [Range(1900, 2030, ErrorMessage = "Please put in a year where the person claimd the prize, not how old he is")]
+    [Range(1900, 2030, ErrorMessage = "Please put in a year where the person claimd the prize, not the age")]
     public int Year { get; set; }
 }
