@@ -5,7 +5,7 @@ using Refit;
 
 
 
-NobelEndpoint nobel = new(RestService.For<INobelData>("https://localhost:7117"));
+INobelEndpoint nobel = new NobelEndpoint(RestService.For<INobelData>("https://localhost:7117"));
 
 
 while (true)
@@ -26,14 +26,21 @@ while (true)
     switch (key)
     {
         case ConsoleKey.D1:
+            await nobel.Read();
             break;
+
         case ConsoleKey.D2:
-            await nobel.CreatePerson();
+            await nobel.Create();
             break;
+
         case ConsoleKey.D3:
+            await nobel.Update();
             break;
+
         case ConsoleKey.D4:
+            await nobel.Delete();
             break;
+
         case ConsoleKey.D9:
             return;
 

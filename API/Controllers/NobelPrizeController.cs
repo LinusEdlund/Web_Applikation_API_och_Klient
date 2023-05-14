@@ -62,10 +62,11 @@ public class NobelPrizeController : ControllerBase
 	}
 
 	[HttpPut]
-	public async Task<IActionResult> Update(NobelPrizeModel model)
+	public async Task<IActionResult> Update(int id, NobelPrizeModel model)
 	{
 		try
 		{
+			model.Id = id;
 			await _data.Update(model);
 			return Ok();
 		}
