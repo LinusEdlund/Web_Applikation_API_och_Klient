@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace UILibrary.Models;
+namespace NobelUIConsole.Models;
 public class NobelModel
 {
     public int Id { get; set; }
